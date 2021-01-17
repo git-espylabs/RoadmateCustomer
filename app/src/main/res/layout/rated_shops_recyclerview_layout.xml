@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="#fff"
+    app:cardElevation="5dp"
+    app:cardMaxElevation="7dp">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="5dp"
+        android:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="#fff"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/mechanic_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha=".7"
+                android:clickable="false"
+                android:background="@drawable/round_corner_edittext_white"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="25dp"
+                android:layout_marginEnd="5dp"
+                android:progressTint="@color/color1"
+                />
+            <TextView
+                android:id="@+id/mechanic_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="12sp"
+                android:paddingStart="2dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingEnd="15dp"
+                android:layout_marginTop="150dp"
+                android:background="@drawable/skew_rectangle_background" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:layout_gravity="end|bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mechanic_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/maven_pro_medium"
+                    android:gravity="end"
+                    android:textColor="#1f1f1f"
+                    android:textSize="12sp" />
+
+                <ImageView
+
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/location_away_icon" />
+            </LinearLayout>
+
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+
+                <TextView
+                    android:id="@+id/mechanic_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:paddingEnd="5dp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textColor="#1f1f1f"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/mechanic_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:paddingEnd="5dp"
+                    android:textSize="13sp"
+                    android:textColor="#1f1f1f"
+                    app:fontFamily="@font/maven_pro_medium" />
+                <TextView
+                    android:visibility="invisible"
+                    android:id="@+id/road_assistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#D32F2F"
+                    android:drawablePadding="5dp"
+                    android:text="Road Assistance Available"
+                    android:layout_marginBottom="10dp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/scroll">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/loadingFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="100dp"
+                style="@style/SpinKitView.Small.MultiplePulseRing"
+                app:SpinKit_Color="@color/colorPrimary"/>
+
+        </FrameLayout>
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/empty_caution"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/empty_caution"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/allshopsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/newPostsCounterTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:padding="5dp" >
+
+            <ProgressBar
+                android:id="@+id/more_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Loading..."
+                android:textColor="#AA000000"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="#fff"
+    app:cardElevation="5dp"
+    app:cardMaxElevation="7dp">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:paddingStart="5dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="5dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:text="Q:  What is the price of classic 500?"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:src="@drawable/profile_icon"
+                android:layout_gravity="center|start"/>
+
+            <TextView
+                android:id="@+id/txtAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textColor"
+                android:textSize="15sp"
+                android:padding="5dp"
+                android:layout_gravity="center|start"
+                android:gravity="center"
+                android:layout_marginStart="3dp"
+                android:text="Navya Rajeevan, 18 Thu,19"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAnwer1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/txtAnswer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#313131"
+                android:textSize="17sp"
+                android:padding="5dp"
+                android:text="A:  2 lakh"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:src="@drawable/profile_icon"
+                    android:layout_gravity="center|start"/>
+                <TextView
+                    android:id="@+id/txtAnsAuthor1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    android:padding="5dp"
+                    android:layout_gravity="center|start"
+                    android:gravity="center"
+                    android:layout_marginStart="3dp"
+                    android:text="Navya Rajeevan, 18 Thu,19"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/view_all_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View all answers"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="start|center"
+            android:textSize="15sp"
+            android:paddingEnd="10dp"
+            android:drawableEnd="@drawable/ic_navigate_next_black_24dp"
+            android:drawablePadding="5dp"/>
+
+        <LinearLayout
+            android:id="@+id/add_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/profile_icon"
+                android:layout_gravity="center|start"/>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:gravity="center|start">
+
+                <TextView
+                    android:id="@+id/commentEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:gravity="center|start"
+                    android:hint="Post answer"
+                    android:enabled="true"
+                    android:inputType="textMultiLine"
+                    android:padding="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:background="#B9B7B7"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="5dp"/>
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/sendReply"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:src="@drawable/send_query"
+                android:layout_gravity="center|start"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

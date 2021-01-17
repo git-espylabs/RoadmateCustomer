@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/loadingFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="100dp"
+            style="@style/SpinKitView.Small.MultiplePulseRing"
+            app:SpinKit_Color="@color/colorPrimary"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="39dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:background="#261044"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="OFFERS"
+                android:id="@+id/offersTv"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:fontFamily="@font/signika_negative_semibold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <View
+                android:id="@+id/indicator1"
+                android:layout_width="match_parent"
+                android:background="#FFC107"
+                android:layout_height="3dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:background="#261044"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/packagesTv"
+                android:text="e-workshop"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:fontFamily="@font/signika_negative_semibold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <View
+                android:id="@+id/indicator2"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:background="#FFC107"
+                android:layout_height="3dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:visibility="visible"
+        android:id="@+id/empty_caution"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:src="@drawable/empty_caution"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="9dp"
+        android:visibility="gone"
+        android:id="@+id/packageRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="9dp"
+        android:id="@+id/offerRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

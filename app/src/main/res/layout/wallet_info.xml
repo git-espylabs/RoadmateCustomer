@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:text="Terms and Conditions for Free Wallet Money
+\n\n1.For a limited period, users will be given a onetime reward of Rs 500 in their RoadMate account wallet when they verify their mobile number with RoadMate.
+\n\n2.The reward money at any circumstances can only be used for booking packages at Rs 500 or above.
+\n\n3.Users shall use only Rs 50 from the reward of Rs 500 for every package they choose.
+\n\n4.Reward money can be used only when users making payments through online."
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/red_curved_button"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/white"
+            android:text="ok" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
