@@ -56,8 +56,8 @@ class ProductOfferDetailsFragment: BaseFragment() {
     private fun populateOfferDetails(data: ProductOfferTrans){
         title.text = data.title
         ofDesc.text = data.description
-        item_price.text = getString(R.string.Rs) + data.normal_amount
-        item_strikeprice.text = getString(R.string.Rs) + data.discount_amount
+        item_price.text = getString(R.string.Rs) + data.discount_amount
+        item_strikeprice.text = getString(R.string.Rs) + data.normal_amount
         endDate.text = CommonUtils.formatDate_yyyyMMdd(data.end_date)
         Picasso.with(context).load(BuildConfig.BANNER_URL_ENDPOINT + data.product_picture).into(offerImage)
     }
