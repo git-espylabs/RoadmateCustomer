@@ -15,6 +15,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/mainlay"
             android:orientation="horizontal"
             android:padding="5dp"
             android:weightSum="2"

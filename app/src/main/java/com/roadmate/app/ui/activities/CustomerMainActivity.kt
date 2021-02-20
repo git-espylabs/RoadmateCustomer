@@ -127,7 +127,7 @@ class CustomerMainActivity : BaseActivity(), BottomNavigationView.OnNavigationIt
             dialogView.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }
         dialogView.setContentView(R.layout.layout_registration_bonus_credited_alert)
-        dialogView.setCancelable(false)
+        dialogView.setCancelable(true)
 
         val btnClose: ImageView = dialogView.findViewById(R.id.btnClose) as ImageView
 

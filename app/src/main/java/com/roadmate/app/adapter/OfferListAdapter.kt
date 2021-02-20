@@ -64,5 +64,8 @@ class OfferListAdapter  internal constructor(private val context: Context, priva
         holder.btnBookNow.setOnClickListener {
             clickHandler(packageData)
         }
+        holder.package_image.setOnClickListener {
+            clickHandler(packageData)
+        }
     }
 }

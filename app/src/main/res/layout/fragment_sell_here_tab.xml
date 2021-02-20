@@ -58,7 +58,7 @@
             </LinearLayout>
 
             <FrameLayout
-                android:visibility="gone"
+                android:visibility="visible"
                 android:id="@+id/category_layout"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.roadmate.app.R
@@ -17,6 +18,7 @@ class ShopSearchResultAdapter  internal constructor(private val context: Context
 
     inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
         internal var shName: TextView = itemView.findViewById(R.id.shName)
+        internal var mainlay: LinearLayout = itemView.findViewById(R.id.mainlay)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,5 +34,9 @@ class ShopSearchResultAdapter  internal constructor(private val context: Context
         var data = mData[position]
 
         holder.shName.text = data.shopname
+
+        holder.mainlay.setOnClickListener {
+            clickHandler(data)
+        }
     }
 }

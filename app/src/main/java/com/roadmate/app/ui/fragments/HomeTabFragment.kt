@@ -84,6 +84,7 @@ class HomeTabFragment: Fragment(), View.OnClickListener, SwipeRefreshLayout.OnRe
         addvehicle.setOnClickListener(this)
         post_query.setOnClickListener(this)
         img_info.setOnClickListener(this)
+        wallet_full_lay.setOnClickListener(this)
         mechanic_category.setOnClickListener(this)
         spareparts_category.setOnClickListener(this)
         waterService.setOnClickListener(this)
@@ -397,6 +398,10 @@ class HomeTabFragment: Fragment(), View.OnClickListener, SwipeRefreshLayout.OnRe
             }
 
             R.id.img_info -> {
+                showWalletInfo()
+            }
+
+            R.id.wallet_full_lay -> {
                 showWalletInfo()
             }
 

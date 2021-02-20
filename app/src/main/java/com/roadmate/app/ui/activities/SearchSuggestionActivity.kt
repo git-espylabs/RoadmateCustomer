@@ -94,11 +94,9 @@ class SearchSuggestionActivity : AppCompatActivity() {
 
         wordlist.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         val adapter = ShopSearchResultAdapter(this, list){ obj ->
-            /*val intent = Intent(context, ShopBookingActivity::class.java)
-            intent.putExtra("shopid", obj!!.shop_id)
-            intent.putExtra("booktype", "3")
-            intent.putExtra("catid", arguments!!["catid"].toString())
-            startActivity(intent)*/
+            val intent = Intent(this, ShopDetailsActivity::class.java)
+            intent.putExtra("shopId", obj!!.id)
+            startActivity(intent)
         }
         wordlist.adapter = adapter
     }
