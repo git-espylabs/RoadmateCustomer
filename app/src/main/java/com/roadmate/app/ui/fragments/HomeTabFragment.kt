@@ -148,6 +148,14 @@ class HomeTabFragment: Fragment(), View.OnClickListener, SwipeRefreshLayout.OnRe
         }
     }
 
+    private fun noVehicleWarning(){
+        android.app.AlertDialog.Builder(requireContext())
+            .setMessage("Add your vehicle and explore now")
+            .setPositiveButton("Close") { _, _ ->
+            }
+            .show()
+    }
+
     private fun getWalletCreditUpdate(){
         lifecycleScope.launch {
             val response = APIManager.call<ApiServices, Response<WalletMaster>> {

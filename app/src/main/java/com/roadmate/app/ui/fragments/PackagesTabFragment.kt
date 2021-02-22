@@ -1,5 +1,6 @@
 package com.roadmate.app.ui.fragments
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -188,5 +189,22 @@ class PackagesTabFragment: Fragment() {
         packagesTv.setOnClickListener {
             invokePackageList()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        when{
+            DefaultVehicleDetails().vehicleId.isNullOrEmpty() ->{
+                noVehicleWarning()
+            }
+        }
+    }
+
+    private fun noVehicleWarning(){
+        AlertDialog.Builder(requireContext())
+            .setMessage("Add your vehicle and explore now")
+            .setPositiveButton("Close") { _, _ ->
+            }
+            .show()
     }
 }

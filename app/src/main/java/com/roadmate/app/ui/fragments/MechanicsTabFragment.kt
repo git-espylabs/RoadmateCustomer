@@ -1,5 +1,6 @@
 package com.roadmate.app.ui.fragments
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -138,12 +139,18 @@ class MechanicsTabFragment: Fragment() {
                 allLayout.visibility = View.GONE
             }
         }else{
-            activity!!.toast {
-                message = "Add your vehicle and explore now"
-            }
             empty_caution.visibility = View.VISIBLE
             nearestLayout.visibility = View.GONE
             allLayout.visibility = View.GONE
+            noVehicleWarning()
         }
+    }
+
+    private fun noVehicleWarning(){
+        AlertDialog.Builder(requireContext())
+            .setMessage("Add your vehicle and explore now")
+            .setPositiveButton("Close") { _, _ ->
+            }
+            .show()
     }
 }

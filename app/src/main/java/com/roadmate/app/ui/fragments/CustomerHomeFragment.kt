@@ -1,5 +1,6 @@
 package com.roadmate.app.ui.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import com.roadmate.app.extensions.doIfFalse
 import com.roadmate.app.extensions.doIfTrue
 import com.roadmate.app.extensions.elseDo
 import com.roadmate.app.log.AppLogger
+import com.roadmate.app.preference.DefaultVehicleDetails
 import com.roadmate.app.preference.FcmDetails
 import com.roadmate.app.preference.UserDetails
 import kotlinx.android.synthetic.main.fragment_customer_home.*
@@ -101,5 +103,23 @@ class CustomerHomeFragment: BaseFragment() {
         tabAdapter.addFragment(PackagesTabFragment(), "OFFERS")
         viewPager.adapter = tabAdapter
         tabs.setupWithViewPager(viewPager)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        when{
+            DefaultVehicleDetails().vehicleId.isNullOrEmpty() ->{
+                noVehicleWarning()
+            }
+        }
+    }
+
+    private fun noVehicleWarning(){
+        AlertDialog.Builder(requireContext())
+            .setMessage("Add your vehicle and explore now")
+            .setPositiveButton("Close") { _, _ ->
+            }
+            .show()
     }
 }
