@@ -67,7 +67,7 @@ class NotificationFragment: Fragment() {
         var json: JSONObject? = null
         try {
             json = JSONObject()
-            json.put("userid", UserDetails().userId)
+            json.put("usertypeid", "1")
             jsonData = json.toString()
         } catch (e: JSONException) {
             e.printStackTrace()

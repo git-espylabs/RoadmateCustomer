@@ -178,7 +178,7 @@ interface ApiServices {
     @POST("productofferdetails")
     suspend fun getProductOfferDetails(@Body jsonRequest : RequestBody): Response<ProductOfferMaster>
 
-    @POST("shopnotificationlist")
+    @POST("notificationlist")
     suspend fun getUserNotifications(@Body jsonRequest : RequestBody): Response<NotificationMaster>
 
     @POST("updatesalestatus")

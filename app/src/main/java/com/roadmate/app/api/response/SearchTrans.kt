@@ -4,5 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class SearchTrans(
     @SerializedName("id") val id: String,
-    @SerializedName("shopname") val shopname: String
+    @SerializedName("shopname") val shopname: String,
+    @SerializedName("image") val image: String
 )

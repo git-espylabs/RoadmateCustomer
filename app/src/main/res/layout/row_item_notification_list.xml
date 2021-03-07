@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"/>
 
     <View
-        app:layout_constraintTop_toBottomOf="@+id/tvBookingDate"
+        app:layout_constraintTop_toBottomOf="@+id/message"
         android:background="#9C9B9B"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="3dp"
