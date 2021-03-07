@@ -33,8 +33,6 @@ class PackageFeaturesAdapter  internal constructor(private val context: Context,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var data = mData[position]
 
-        if (data.feature != null && data.feature.isNotEmpty()) {
-            holder.package_feature.text = data.feature
-        }
+        holder.package_feature.text = data.feature
     }
 }

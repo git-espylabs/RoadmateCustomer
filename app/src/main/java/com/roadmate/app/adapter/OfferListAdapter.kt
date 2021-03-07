@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.roadmate.app.BuildConfig
 import com.roadmate.app.R
@@ -14,7 +16,12 @@ import com.roadmate.app.api.response.CustomerOfferTrans
 import com.roadmate.app.api.response.PackageTrans
 import com.squareup.picasso.Picasso
 
-class OfferListAdapter  internal constructor(private val context: Context, private val mData: ArrayList<CustomerOfferTrans>, val clickHandler: (obj: CustomerOfferTrans?) -> Unit) : RecyclerView.Adapter<OfferListAdapter.ViewHolder>()  {
+class OfferListAdapter  internal constructor(
+    private val context: Context,
+    private val mData: ArrayList<CustomerOfferTrans>,
+    val setOffset: Boolean,
+    val clickHandler: (obj: CustomerOfferTrans?) -> Unit
+) : RecyclerView.Adapter<OfferListAdapter.ViewHolder>()  {
 
     private val mInflater: LayoutInflater = LayoutInflater.from(context)
 
@@ -25,6 +32,7 @@ class OfferListAdapter  internal constructor(private val context: Context, priva
         internal var package_percentage: TextView = itemView.findViewById(R.id.package_percentage)
         internal var package_image: ImageView = itemView.findViewById(R.id.package_image)
         internal var btnBookNow: TextView = itemView.findViewById(R.id.btnBookNow)
+        internal var main: CardView = itemView.findViewById(R.id.main)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -36,8 +44,35 @@ class OfferListAdapter  internal constructor(private val context: Context, priva
         return mData.size
     }
 
+    fun getScreenWidth(): Int{
+        val displayMetrics = context.resources.displayMetrics
+        val height = displayMetrics.heightPixels
+        val width = displayMetrics.widthPixels
+//        return (width / displayMetrics.density).toInt()
+        return width
+    }
+
+    fun Context.dpToPx(dp: Int): Int {
+        return (dp * resources.displayMetrics.density).toInt()
+    }
+
+    fun Context.pxToDp(px: Int): Int {
+        return (px / resources.displayMetrics.density).toInt()
+    }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var packageData = mData[position]
+
+        if (setOffset) {
+            val widthOffset = context.dpToPx(100)
+            val params = LinearLayout.LayoutParams(
+                (getScreenWidth() - widthOffset), LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            val rMrgn = context.dpToPx(20)
+            params.setMargins(0, 0, rMrgn, 0)
+
+            holder.main.layoutParams = params
+        }
 
         holder.offer_name.text = packageData.title
 

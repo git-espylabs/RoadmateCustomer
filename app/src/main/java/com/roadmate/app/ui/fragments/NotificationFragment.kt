@@ -32,16 +32,21 @@ class NotificationFragment: Fragment() {
 
     private fun getNotificationsList(){
         showProgress(true)
-        lifecycleScope.launch {
-            val response = APIManager.call<ApiServices, Response<NotificationMaster>> {
-                getUserNotifications(requestJSON())
+        try {
+            lifecycleScope.launch {
+                val response = APIManager.call<ApiServices, Response<NotificationMaster>> {
+                    getUserNotifications(requestJSON())
+                }
+                if (response.isSuccessful && response.body()?.data!!.isNotEmpty()){
+                    populateList(response.body()?.data!!)
+                }else{
+                    empty_caution.visibility = View.VISIBLE
+                    notification_recycler.visibility = View.GONE
+                }
+                showProgress(false)
             }
-            if (response.isSuccessful && response.body()?.data!!.isNotEmpty()){
-                populateList(response.body()?.data!!)
-            }else{
-                empty_caution.visibility = View.VISIBLE
-                notification_recycler.visibility = View.GONE
-            }
+        } catch (e: Exception) {
+            e.printStackTrace()
             showProgress(false)
         }
     }

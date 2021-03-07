@@ -128,6 +128,11 @@ class PackageDetailsFragment: Fragment(){
             RecyclerView.VERTICAL,
             false
         )
+        list.forEach {
+            if (null == it.feature || it.feature.isNullOrBlank()){
+                list.remove(it)
+            }
+        }
         val  featuresAdapter = PackageFeaturesAdapter(activity!!, list)
         featureRecycler.adapter = featuresAdapter
     }

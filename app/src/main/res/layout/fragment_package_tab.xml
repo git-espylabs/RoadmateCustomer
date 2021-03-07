@@ -92,12 +92,16 @@
         android:layout_marginTop="9dp"
         android:visibility="gone"
         android:id="@+id/packageRecycler"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="9dp"
         android:id="@+id/offerRecycler"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

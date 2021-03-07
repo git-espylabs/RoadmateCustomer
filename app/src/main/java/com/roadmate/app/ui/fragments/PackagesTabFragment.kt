@@ -63,7 +63,7 @@ class PackagesTabFragment: Fragment() {
 
     private fun populatePackagesList(packageList: ArrayList<PackageTrans>){
         packageRecycler.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        var packageAdapter = PackageAdapter(activity!!, packageList){packageId ->
+        var packageAdapter = PackageAdapter(activity!!, packageList, false){packageId ->
             val intent = Intent(context, PackageDetailsActivity::class.java)
             intent.putExtra("PackageId", packageId)
             startActivity(intent)
@@ -92,7 +92,7 @@ class PackagesTabFragment: Fragment() {
 
     private fun populateOffersList(list: ArrayList<CustomerOfferTrans>){
         offerRecycler.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        var offerAdapter = OfferListAdapter(activity!!, list){ obj ->
+        var offerAdapter = OfferListAdapter(activity!!, list, false){ obj ->
             val intent = Intent(context, OfferDetailsActivity::class.java)
             intent.putExtra("shopid", obj!!.shop_id)
             intent.putExtra("offerid", obj!!.id)

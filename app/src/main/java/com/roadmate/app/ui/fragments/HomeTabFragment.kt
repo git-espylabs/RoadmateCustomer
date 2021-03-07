@@ -336,7 +336,7 @@ class HomeTabFragment: Fragment(), View.OnClickListener, SwipeRefreshLayout.OnRe
 
     private fun populatePackagesList(packageList: ArrayList<PackageTrans>){
         packages_recycler_view.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-        var packageAdapter = PackageAdapter(activity!!, packageList){packageId ->
+        var packageAdapter = PackageAdapter(activity!!, packageList, true){packageId ->
             val intent = Intent(context, PackageDetailsActivity::class.java)
             intent.putExtra("PackageId", packageId)
             startActivity(intent)
@@ -346,7 +346,7 @@ class HomeTabFragment: Fragment(), View.OnClickListener, SwipeRefreshLayout.OnRe
 
     private fun populateOffersList(list: ArrayList<CustomerOfferTrans>){
         rvOffers.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-        var offerAdapter = OfferListAdapter(activity!!, list){ obj ->
+        var offerAdapter = OfferListAdapter(activity!!, list, true){ obj ->
             DefaultVehicleDetails().vehicleId.isNotEmpty().doIfTrue{
                 val intent = Intent(context, OfferDetailsActivity::class.java)
                 intent.putExtra("shopid", obj!!.shop_id)
